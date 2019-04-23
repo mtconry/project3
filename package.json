@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "react-encrypt": "^1.0.1",
+    "react-html5-camera-photo": "^1.4.0"
   }
 }
