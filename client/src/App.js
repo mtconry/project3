@@ -12,13 +12,13 @@ import Login from "./pages/login";
 
 class App extends Component {
 state={
-  login
+  login: false
 }
 
   render() {
     return (
       <div>
-      <Navbar/>
+        <Navbar login={this.state.login}/>
       <Router>
             <Switch>
               <Route exact path="/" component={Login} />

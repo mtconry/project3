@@ -4,6 +4,20 @@ import React from "react";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar(props) {
+    let navContent = "";
+    if (props.login) {
+      navContent = (<ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="../pages/hotspots">HotSpots <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../pages/recent">Recent</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../pages/profile">Profile</a>
+      </li>
+    </ul>)
+    }
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../pages/home">Check-N-Go</a>
@@ -12,26 +26,16 @@ function Navbar(props) {
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="../pages/hotspots">HotSpots <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../pages/recent">Recent</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../pages/profile">Profile</a>
-            </li>
-            <div>
-            <form className="form-inline my-2 my-lg-0">
-    <input className="form-control mr-sm-2" type="text" name="name" placeholder="Username" />
-    <input type="password" name="password" placeholder="Password" />
-     <input type="submit" value="Submit" />
-</form>
-</div>
-          </ul>
+            {navContent}
           
         </div>
+        <div>
+            <form className="form-inline my-2 my-lg-0 justify-content-right">
+    <input className="form-control mr-sm-2" type="text" name="name" placeholder="Username" />
+    <input type="password" name="password" placeholder="Password" />
+     <input type="submit" value="Login" />
+</form>
+</div>
       </nav>
     );
   }
