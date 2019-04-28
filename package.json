@@ -21,6 +21,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "if-env": "^1.0.4",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth": "^2.0.0",
     "react-encrypt": "^1.0.1",
     "react-html5-camera-photo": "^1.4.0"
   }
