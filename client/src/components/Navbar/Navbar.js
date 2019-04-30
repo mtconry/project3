@@ -8,19 +8,19 @@ function Navbar(props) {
     if (props.login) {
       navContent = (<ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="../pages/hotspots">HotSpots <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/hotspots">HotSpots <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../pages/recent">Recent</a>
+        <a class="nav-link" href="/recent">Recent</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../pages/profile">Profile</a>
+        <a class="nav-link" href="/profile">Profile</a>
       </li>
     </ul>)
     }
     return (
         <nav class="navbar navbar-expand-lg " id="hello" >
-        <a class="navbar-brand" href="../pages/home">Check-N-Go</a>
+        <a class="navbar-brand" href="/home">Check-N-Go</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
