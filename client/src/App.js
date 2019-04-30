@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import "../src/style.css";
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
+import Footer from "./components/footer/Footer"
+import "./components/footer/style.css"
 import Navbar from "./components/Navbar/Navbar"
 import Home from "./pages/home.js";
 import Profile from "./pages/profile";
 import HotSpots from "./pages/hotspots";
 import Recent from "./pages/recent";
 import Login from "./pages/login";
-import Profilepic from "./components/profilePic/profile";
 import "./style.css"
 import "./components/Navbar/style.css"
 // import Nomatch from "./pages/Nomatch";
@@ -15,14 +16,13 @@ import "./components/Navbar/style.css"
 
 class App extends Component {
 state={
-  login: false
+  login: true
 }
 
   render() {
     return (
       <div>
         <Navbar login={this.state.login}/>
-        <Profilepic/>
       <Router>
             <Switch>
               <Route exact path="/" component={Login} />
@@ -33,6 +33,7 @@ state={
               {/* <Route component={Nomatch} /> */}
             </Switch>
           </Router>
+         
       </div>
     );
   }

@@ -1,0 +1,10 @@
+.footer{
+    border: 2px solid ;
+    position: relative;
+    left:0;
+    bottom:0;
+    right:0;
+    padding-bottom:60px;
+    background-color: dodgerblue;
+
+}
