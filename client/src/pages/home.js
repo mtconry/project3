@@ -1,13 +1,15 @@
 
 import React, {Component} from "react";
 
+import Modal from "../components/modal/Modal"
+
 
 
 class home extends Component {
     render() {
         return (
             <div>
-
+            <Modal/>
             </div>
         );
     }
