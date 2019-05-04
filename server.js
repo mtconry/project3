@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const mongoose = require("mongoose");
+// const FacebookLogin = require('react-facebook-login');
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -10,8 +12,16 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
+// Connect to MongoDB
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://",
+  {
+    useCreateIndex: true,
+    useNewUrlParser: true
+  }
+)
 // Define API routes here
+
 
 // Send every other request to the React app
 // Define any API routes before this runs
