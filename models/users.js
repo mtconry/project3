@@ -8,7 +8,7 @@ const dbUsers = new Schema({
     location: {type: String, required: true },
     profileDescription: {type: String, required: true },
     image: {type: String },
-    facebookId: {type: String },
+    // facebookId: {type: String },
     googleId: { type: String }
 });
 

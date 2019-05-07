@@ -40,7 +40,7 @@ fd.append("image", this.state.selectedFile)
                 <button onClick={this.fileSelectedHandler}>Upload</button> */}
                 <div className="card">
                 <div className="container">
-      <img src="http://fillmurray.com/g/300/300" id="img-preview" />
+      <img src="http://fillmurray.com/g/300/300" alt="" id="img-preview" />
       <label className="file-upload-container" htmlFor="file-upload">
         <input style={{display:"none"}}
         id="file-upload" 
