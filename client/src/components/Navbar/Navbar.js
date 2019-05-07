@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-
+import GoogleLogin from 'react-google-login';
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar(props) {
@@ -29,12 +29,22 @@ function Navbar(props) {
             {navContent}
           
         </div>
-        <div>
-            <form className="form-inline justify-content-right">
+        {/* <div> */}
+
+        {
+              this.state.loggedIn
+              ? <button onClick={this.logout}>Logout</button>
+              :<GoogleLogin
+                clientId={process.env.REACT_APP_GOOGLE_API_KEY}
+                buttonText="Login with Google"
+                onSuccess={this.responseGoogle}
+                onFailure={this.responseGoogle}/>
+            }
+            {/* <form className="form-inline justify-content-right">
     <input className="form-control" id="user" type="text" name="name" placeholder="Username" />
     <input type="password" name="password" id="password" placeholder="Password" />
      <input className="login" type="submit" value="Login" />
-</form>
+</form> */}
 </div>
       </nav>
     );

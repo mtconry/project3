@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Profile from "../components/profilePic/profile"
+// import Profile from "../components/profilePic/profile"
 import Modal from "../components/modal/Modal"
 
 class profile extends Component {
