@@ -156,7 +156,7 @@ class App extends Component {
               )} />
               <Route path="/home" component={Home} />
               <Route path="/Profile" component={Profile} />
-              <Route path="/HotSpots" component={HotSpots} />
+              {/* <Route path="/HotSpots" component={HotSpots} /> */}
               <Route path="/Recent" component={Recent} />
               
               {/* <Route component={Nomatch} /> */}
@@ -169,7 +169,6 @@ class App extends Component {
 }
 
 export default App;
-
 
 
 

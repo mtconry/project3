@@ -2,8 +2,18 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+const cloudinary = require('cloudinary');
 const mongoose = require("mongoose");
-// const FacebookLogin = require('react-facebook-login');
+require("dotenv").config();
+
+//coludinary config
+cloudinary.config({
+  cloud_name: process.env.cloud_name,
+  api_key: process.env.api_key,
+  api_secret: process.env.api_secret
+});
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -22,6 +32,8 @@ mongoose.connect(
 )
 // Define API routes here
 
+const routes = require("./Routes/apiRoutes");
+app.use("/", routes)
 
 // Send every other request to the React app
 // Define any API routes before this runs
