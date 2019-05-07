@@ -1,7 +1,8 @@
-
+// /*global FB*/
 import React, {Component} from "react";
 
 import Modal from "../components/modal/Modal"
+// const FB = window.FB
 
 
 

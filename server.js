@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+
 const cloudinary = require('cloudinary');
 const mongoose = require("mongoose");
 require("dotenv").config();
@@ -13,6 +14,7 @@ cloudinary.config({
   api_secret: process.env.api_secret
 });
 
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -20,10 +22,19 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
+// Connect to MongoDB
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://",
+  {
+    useCreateIndex: true,
+    useNewUrlParser: true
+  }
+)
 // Define API routes here
+
 const routes = require("./Routes/apiRoutes");
 app.use("/", routes)
+
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
