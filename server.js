@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
+const Routes = require("./Routes")
 const app = express();
 
 const cloudinary = require('cloudinary');
@@ -24,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
 }
 // Connect to MongoDB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://",
+  process.env.MONGODB_URI || "mongodb://loacalhost/check-N-Go",
   {
     useCreateIndex: true,
     useNewUrlParser: true
@@ -32,8 +33,8 @@ mongoose.connect(
 )
 // Define API routes here
 
-const routes = require("./Routes/apiRoutes");
-app.use("/", routes)
+// const routes = require("./Routes/api/apiRoutes");
+app.use(Routes)
 
 // Send every other request to the React app
 // Define any API routes before this runs

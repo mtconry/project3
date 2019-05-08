@@ -1,6 +1,4 @@
 module.exports ={
-    User: require("./users")
-}
-module.exports = {
+    User: require("./users"),
     Locations: require("./locations")
 }

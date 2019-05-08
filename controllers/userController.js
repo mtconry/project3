@@ -13,7 +13,8 @@ module.exports ={
         .catch(err => res.status(422).json(err));
     },
     create: function ( req, res ) {
-        db.User.create(req.params.id)
+        console.log(req.body);
+        db.User.create(req.body)
         .then(dbUser => res.json(dbUser))
         .catch(err => res.status(422).json(err));
     },
