@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3001;
 const Routes = require("./Routes")
 const app = express();
 
-const cloudinary = require('cloudinary');
+const cloudinary = require("cloudinary");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
 }
 // Connect to MongoDB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://loacalhost/check-N-Go",
+  process.env.MONGODB_URI || "mongodb://localhost:27017/check-N-Go",
   {
     useCreateIndex: true,
     useNewUrlParser: true

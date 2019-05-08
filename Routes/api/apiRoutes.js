@@ -41,8 +41,26 @@ router.post("/profile", multerUpload, (req, res) =>{
               .catch(err => res.status(422).json(err))
         
     });
+}else{
+    res.status(404).json({msg: "No File"})
 }
 });
+router.post("/profilePic", multerUpload, (req, res) => {
+    if (req.files) {
+        var file = dataUri(req).content;
+        cloudinary.uploader.upload(file, (result) => {
+            User.findOneAndUpdate({
+                 _id: req.user._id 
+                },{
+                picture: result.secure_url,
+                })
+                .then(dbModel => res.json(dbModel))
+                .catch(err => res.status(422).json(err));
+            });
+    }else{
+        res.status(404).json({msg: "No File"})
+    }
+    });
 
 
 
