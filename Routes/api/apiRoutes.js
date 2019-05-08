@@ -1,4 +1,4 @@
-const User = require("../models/users")
+const User = require("../../models/users")
 const router = require("express").Router();
 const cloudinary = require('cloudinary');
 const Datauri = require('datauri');
