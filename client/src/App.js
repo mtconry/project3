@@ -82,7 +82,7 @@ class App extends Component {
 //     // set response to state
   }
   responseGoogle = (res) => {
-    console.log(res)
+    console.log(res) //Axios call to backend 
     localStorage.setItem('id', res.googleId);
     this.setState({
       loggedIn: true
