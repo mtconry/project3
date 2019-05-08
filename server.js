@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3001;
 const Routes = require("./Routes")
 const app = express();
 
-const cloudinary = require('cloudinary');
+const cloudinary = require("cloudinary");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
