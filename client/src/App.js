@@ -14,6 +14,8 @@ import Recent from "./pages/recent";
 // import Login from "./pages/login";
 import "./style.css";
 import "./components/Navbar/style.css";
+
+
 // import Nomatch from "./pages/Nomatch";
 // import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
@@ -99,29 +101,31 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <header className="Navbar">
-            {/* <img src={logo} className="App-logo" alt="logo" /> */}
-            <div>
+          <header className="Navbar-nav">
+            <div className="navi">
+            <a className="navbar-brand" href="/home">Check-N-Go</a>
               <Link to="/">Home</Link>
               <Link to="/Profile">Profile</Link>
               <Link to="/HotSpots">HotSpots</Link>
               <Link to="/Recent">Recent</Link>
-              {/* {/* <Link to="/Post">Post</Link> */} 
-            </div>
-            {
+              {
               this.state.loggedIn
-              ? <button onClick={this.logout}>Logout</button>
+              ? <button  onClick={this.logout}>Logout</button>
               :<GoogleLogin
                 clientId={process.env.REACT_APP_GOOGLE_API_KEY}
                 buttonText="Login with Google"
                 onSuccess={this.responseGoogle}
-                onFailure={this.responseGoogle}/>
-            }
-
+                onFailure={this.responseGoogle}
+                
+                /> 
+            } 
+            {console.log(process.env.REACT_APP_GOOGLE_API_KEY)}
+            </div>
             
             
-
           </header>
+          
+          
           <Route path="/home" component={Home} />
           <Route path="/Profile" component={Profile} />
           <Route path="/HotSpots" component={HotSpots} />
@@ -129,9 +133,12 @@ class App extends Component {
           {/* <PrivateRoute user={this.state.loggedIn} exact path='/dash' component={protected2}/> */}
         </div>
       </Router>
+      
     );
   }
 };
+
+export default App;
 
 //   // onFacebookLogin = (loginStatus, resultObject) => {
 //   //   if (loginStatus === true) {
@@ -168,7 +175,7 @@ class App extends Component {
 //   };
 // }
 
-export default App;
+
 
 
 

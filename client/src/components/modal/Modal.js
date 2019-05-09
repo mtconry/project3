@@ -19,7 +19,7 @@ fileSelectedHandler = () =>{
     const fd = new FormData();
     console.log(this.state.selectedFile)
 fd.append("image", this.state.selectedFile)
-    axios.post("/profile",fd, {headers: {"Content-Type":"multipart/form-data"}})
+    axios.post("/api/profile",fd, {headers: {"Content-Type":"multipart/form-data"}})
     .then(res=>{
         console.log(res)   
     })
