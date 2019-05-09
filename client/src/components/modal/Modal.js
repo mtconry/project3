@@ -3,6 +3,7 @@ import "./style.css"
 import axios from "axios";
 
 
+
 class Modal extends Component {
     state = {
         selectedFile: null
@@ -19,43 +20,27 @@ fileSelectedHandler = () =>{
     const fd = new FormData();
     console.log(this.state.selectedFile)
 fd.append("image", this.state.selectedFile)
-    axios.post("/api/profile",fd, {headers: {"Content-Type":"multipart/form-data"}})
+    axios.post("/profile",fd, {headers: {"Content-Type":"multipart/form-data"}})
     .then(res=>{
         console.log(res)   
     })
 }
-  
 
+fileUpload=(params) =>{
+
+    fetch("https://api.cloudinary.com/v1_1/ucf-full-stack-coding-bootcamp/image/upload").then().then()
+    
+}
     render() {
-
-
-
         return (
-            <div>
-                {/* <input style={{display: "none"}} 
-                type="file"  
-                onChange={this.fileChangeHandler} 
-                ref={fileInput => this.fileInput = fileInput}/>
-                <button onClick={() => this.fileInput.click()} >Pick file</button>
-                <button onClick={this.fileSelectedHandler}>Upload</button> */}
-                <div className="card">
-                <div className="container">
-      <img src="http://fillmurray.com/g/300/300" alt="" id="img-preview" />
-      <label className="file-upload-container" htmlFor="file-upload">
-        <input style={{display:"none"}}
-        id="file-upload" 
-        type="file" 
-        onChange = {this.fileChangeHandler}
-        ref={fileInput => this.fileInput = fileInput}
-        />
-        <button onClick={() => this.fileInput.click()} >Pick file</button>
-         <button onClick={this.fileSelectedHandler}>Upload</button>
-        
-      </label>
-    </div>
-    </div>
-
+           <React.Fragment>
+                <form>
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Example file input</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1"/>
             </div>
+          </form>
+           </React.Fragment>
         );
     }
 }
