@@ -1,8 +1,9 @@
-// /*global FB*/
+
 import React, {Component} from "react";
 
 import Modal from "../components/modal/Modal"
-// const FB = window.FB
+import HotSpots from "../pages/hotspots";
+
 
 
 
@@ -11,14 +12,11 @@ class home extends Component {
         return (
             <div>
             <Modal/>
+            <HotSpots/>
             </div>
         );
     }
 }
-// function checkLoginState() {
-//     FB.getLoginStatus(function(response) {
-//       statusChangeCallback(response);
-//     });
-// }
+
 export default home;
 
