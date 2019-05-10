@@ -28,7 +28,7 @@ class recent extends Component {
                 <h5 className="card-title">{user.name}</h5>
                 <img src={user.imageUrl} className="card-img-top" alt="..."/>
                 <br/>
-                <a href={user._id} className="btn btn-primary">Go somewhere</a>
+                <a href={user._id} className="btn btn-primary">profile</a>
             </div>
             <div className= "col-sm-8">
                 <img src={user.imageUrl} />

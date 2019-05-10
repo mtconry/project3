@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GoogleLogin from 'react-google-login';
 import "./style.css";
 import axios from "axios";
 
@@ -31,16 +32,17 @@ class Modal extends Component {
   };
   render() {
     return (
+      
       <React.Fragment>
         <form>
-          <div className="form-group" id="imageMod">
-            <label htmlFor="exampleFormControlFile1">Example file input</label>
-            <input
+          <div className="form-group" style={{display:"inline-block"}} >
+        
+            <input 
               type="file"
               className="form-control-file"
               id="exampleFormControlFile1"
               onChange={this.fileUpload}
-            />
+            />  
           </div>
         </form>
       </React.Fragment>

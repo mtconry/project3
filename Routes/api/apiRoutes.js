@@ -10,9 +10,12 @@ router.route("/upload")
 .post((req, res)=>{
     const form = new formidable.IncomingForm();
     form.parse(req, function(err, fields, files) {
-        console.log(files);
+        console.log(files);      
     });
-});
+})
+.get(userController.findAll)
+.put(userController.update)
+.delete(userController.remove)
 
 router.route("/user")
     .get(userController.findAll)

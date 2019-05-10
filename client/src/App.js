@@ -61,7 +61,7 @@ class App extends Component {
               <Link to="/Profile">Profile</Link>
               <Link to="/HotSpots">HotSpots</Link>
               <Link to="/Recent">Recent</Link>
-    
+              <Modal/>
               </div>
               : ""
               }
@@ -76,7 +76,7 @@ class App extends Component {
                 
                 /> 
             } 
-            {console.log(process.env.REACT_APP_GOOGLE_API_KEY)}
+           
             </div>
             
             
