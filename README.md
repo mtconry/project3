@@ -32,8 +32,10 @@ React Native/Redux (future use)
 
 ## Contributors: 
 
-[Alex Davila](https://github.com/alexdavila39)
+[Alex Davila](https://github.com/alexdavila39)     
+    [LinkedIn](https://www.linkedin.com/in/alejandro-davila-212105125/)
 
-[Mike Conry](https://github.com/mtconry)
+[Mike Conry](https://github.com/mtconry)     
+    [LinkedIn](https://www.linkedin.com/in/michael-conry-t/)
 
 
