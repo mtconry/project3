@@ -4,10 +4,11 @@ const PORT = process.env.PORT || 3001;
 const Routes = require("./Routes")
 const app = express();
 const formData = require('express-form-data')
-
+const db = require("./models");
 const cloudinary = require("cloudinary");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const Schema = mongoose.Schema;
 
 //coludinary config
 cloudinary.config({
@@ -46,17 +47,35 @@ app.get("*", (req, res) => {
 });
 
 
+
+
+
+
+
 app.post('/image-upload-single', (req, res) => {
   
   const path = req.files[0].path
-
 
   console.log(path);
   cloudinary.uploader.upload(path)
     .then(image => {
       
       console.log("image uploaded");
-      res.json([image])})
+
+      const imageUrl = [image][0].url; //actual image path
+
+      //var x = db.user.find()
+
+      //x .url 
+
+      // var j = x.url + imageUrl
+
+      //db.User.update({googleId:req.body.googleId},{url:j}).
+      
+        db.User.update({googleId:req.body.googleId},{url:imageUrl}).then(item=>{console.log("updated database"); res.json([image])}).catch(err => {
+          res.status(400).send("unable to save to database");
+          });
+      })
 })
 
 
@@ -64,3 +83,4 @@ app.post('/image-upload-single', (req, res) => {
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
+

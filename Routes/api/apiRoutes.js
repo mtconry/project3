@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
+const mongo =require("mongodb");
 const formidable = require("formidable");
 router.route("/test")
 .get((req, res)=>{
@@ -7,11 +8,11 @@ router.route("/test")
 });
 
 router.route("/upload")
-.post((req, res)=>{
+.put((req, res)=>{
     const form = new formidable.IncomingForm();
     form.parse(req, function(err, fields, files) {
         console.log(files);      
-    });
+    })
 })
 .get(userController.findAll)
 .put(userController.update)
