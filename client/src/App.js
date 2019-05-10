@@ -14,6 +14,7 @@ import Recent from "./pages/recent";
 // import Login from "./pages/login";
 import "./style.css";
 import "./components/Navbar/style.css";
+import Modal from "./components/modal/Modal";
 
 
 // import Nomatch from "./pages/Nomatch";
@@ -21,56 +22,6 @@ import "./components/Navbar/style.css";
 
 
 class App extends Component {
-// // state={
-// //   login: true
-// // }
-// // const home = () =>(
-// //   <h2>HOME</h2>
-// // )
-// // const about = props => {
-// //   console.log(props.match.params.id)
-// //   return(
-// //     <h2>ABOUT</h2>
-// //   )
-// // }
-
-// // const responseFacebook = (response) => {
-// //   console.log(response);
-// // }
-// //     ReactDOM.render(
-// //                 <FacebookLogin
-// //                   appId={process.env.REACT_APP_FB_APP_ID}
-// //                   autoLoad={true}
-// //                   fields="name,email,picture"
-// //                   callback={responseFacebook}
-// //                   cssClass="my-facebook-button-class"
-// //                   icon="fa-facebook"
-// //                 />
-// //                 // {/* document.getElementById('demo') */}
-// //               );
-// // ReactDOM.render(
-// //   <FacebookLogin
-// //     appId={process.env.REACT_APP_FB_APP_ID}
-// //     autoLoad={true}
-// //     fields="name,email,picture"
-// //     onClick={componentClicked}
-// //     callback={responseFacebook} />,
-// //   document.getElementById('demo')
-// // );
-
-// const PrivateRoute = ({component: Component, user, ...rest}) => {
-//   return (
-//     <Route
-//     {...rest}
-//     render={(props)=> user
-//       ? <Component {...props} {...rest} user={user} />
-//       : <Redirect to = {{pathname: '/', state: {from:props.location}}} />}
-//       // : <Redirect to '/' />
-//     />
-//   )
-// }
-
-// class App extends Component {
   constructor(props) {
     super(props) 
     console.log(this.props)
@@ -110,6 +61,7 @@ class App extends Component {
               <Link to="/Profile">Profile</Link>
               <Link to="/HotSpots">HotSpots</Link>
               <Link to="/Recent">Recent</Link>
+    
               </div>
               : ""
               }
