@@ -31,7 +31,7 @@ class recent extends Component {
                 <a href={user._id} className="btn btn-primary">profile</a>
             </div>
             <div className= "col-sm-8">
-                <img src={user.imageUrl} />
+                <img src={user.url} />
             </div>
         </div>
         <div className="row">

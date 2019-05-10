@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import GoogleLogin from 'react-google-login';
 import "./style.css";
 import axios from "axios";
+const db = require("../../utils/API")
 
 class Modal extends Component {
   state = {
@@ -9,27 +10,33 @@ class Modal extends Component {
   };
 
   fileUpload = e => {
+   
+    const googleId = localStorage.getItem('id');
     const files = Array.from(e.target.files);
 
     const formData = new FormData();
     formData.append(0,files[0]);
+    formData.append("googleId",googleId);
 
+     
     fetch(`http://localhost:3001/image-upload-single`, {
       method: "POST",
-      body: formData
+      body:formData
     }).then(res => {
-        console.log("we made it");
+        // console.log(res.json());
       if (!res.ok) {
         throw res;
       }
-      return res.json();
-    });
-    // .then(res =>{
+      return res.json()
+    })
+      
+
         //db code 
         //add img url to db
         //img url will be a property on res parameter  
-    // });
-  };
+        
+    
+  }
   render() {
     return (
       
