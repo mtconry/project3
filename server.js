@@ -3,6 +3,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const Routes = require("./Routes")
 const app = express();
+const formData = require('express-form-data')
 
 const cloudinary = require("cloudinary");
 const mongoose = require("mongoose");
@@ -10,9 +11,9 @@ require("dotenv").config();
 
 //coludinary config
 cloudinary.config({
-  cloud_name: process.env.cloud_name,
-  api_key: process.env.api_key,
-  api_secret: process.env.api_secret
+  cloud_name: process.env.REACT_APP_CLOUDNAME,
+  api_key: process.env.REACT_APP_APIKEY,
+  api_secret: process.env.REACT_APP_APISECRET
 });
 
 
@@ -35,14 +36,29 @@ mongoose.connect(
 
 // const routes = require("./Routes/api/apiRoutes");
 app.use(Routes)
+app.use(formData.parse())
 
 // Send every other request to the React app
 // Define any API routes before this runs
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+
+app.post('/image-upload-single', (req, res) => {
+  
+  const path = req.files[0].path
+
+
+  console.log(path);
+  cloudinary.uploader.upload(path)
+    .then(image => {
+      
+      console.log("image uploaded");
+      res.json([image])})
+})
+
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
-  console.log(process.env.IMGUR_CLIENT_ID);
 });
