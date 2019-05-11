@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Connect to MongoDB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost:27017/check-N-Go",
+  process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds155086.mlab.com:55086/heroku_7jndmb45",
   {
     useCreateIndex: true,
     useNewUrlParser: true
