@@ -17,13 +17,15 @@ cloudinary.config({
   api_secret: process.env.REACT_APP_APISECRET
 });
 
-
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Connect to MongoDB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds155086.mlab.com:55086/heroku_7jndmb45",
+  process.env.MONGODB_URI || "mongodb://localhost:27017/check-N-Go",
   {
     useCreateIndex: true,
     useNewUrlParser: true
@@ -39,17 +41,10 @@ mongoose.connect(
   // Define any API routes before this runs
   
   // Serve up static assets (usually on heroku)
-  if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
+ 
     app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+      res.sendFile(path.resolve(__dirname, './client/public/index.html'));
     });
-  }
-    
-  
-  
-  
-  
   
   
   app.post('/image-upload-single', (req, res) => {

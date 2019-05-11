@@ -26,17 +26,21 @@ class recent extends Component {
         <div className="row">
             <div className= "col-sm-4">
                 <h5 className="card-title">{user.name}</h5>
-                <img src={user.imageUrl} className="card-img-top" alt="..."/>
+                <img src={user.imageUrl} className="card-img-top"  alt="..."  style={{ maxHeight:"100px", width:"100px" }}/>
                 <br/>
-                <a href={user._id} className="btn btn-primary">profile</a>
+                <a href="/profile" className="btn btn-primary">profile</a>
             </div>
             <div className= "col-sm-8">
-                <img src={user.url} />
+                <img src={user.url} style={{ maxHeight:"400px" ,width:"300px"}} />
             </div>
         </div>
         <div className="row">
-            <div className="col-12">
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div className="col-4"></div>
+
+            <div className="col-8" >
+                <p className="card-text" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis condimentum urna. Phasellus vulputate nunc consequat fermentum hendrerit. Vivamus facilisis mi velit, in dictum ex ultricies eget. Mauris sed nibh.
+
+</p>
             </div>
         </div>
     </div>

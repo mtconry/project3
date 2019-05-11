@@ -52,10 +52,10 @@ class App extends Component {
         <div className="App">
           <header className="Navbar-nav">
             <div className="navi">
-            <a className="navbar-brand" href="/home">Check-N-Go</a>
+            <a className="navbar-brand" href="/hotspots">Check-N-Go</a>
               {this.state.loggedIn
               ?<div style={{ display:"inline-block" }}>
-              <Link to="/">Home</Link>
+              {/* <Link to="/">Home</Link> */}
               <Link to="/Profile">Profile</Link>
               <Link to="/HotSpots">HotSpots</Link>
               <Link to="/Recent">Recent</Link>
@@ -81,7 +81,7 @@ class App extends Component {
           </header>
           
           
-          <Route path="/home" component={Home} />
+          {/* <Route path="/" component={Home} /> */}
           <Route path="/Profile" component={Profile} />
           <Route path="/HotSpots" component={HotSpots} />
           <Route path="/Recent" component={Recent} />

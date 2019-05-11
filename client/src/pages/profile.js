@@ -3,15 +3,16 @@ import React, { Component } from 'react';
 import Modal from "../components/modal/Modal"
 import Axios from "axios"
 import { userInfo } from 'os';
+import "./style.css"
 
 class profile extends Component {
     constructor(props) {
         super(props);
-        this.state = {users: []};
+        this.state = {users: [0]};
       }
 
       componentDidMount() {
-        Axios.get("/api/user/:id").then(res => {
+        Axios.get("/api/user/").then(res => {
             this.setState({
                 users: res.data
             });
@@ -20,6 +21,7 @@ class profile extends Component {
     render() {
         return (
         <div>
+            <h1 className="notWorking">PAGE UNDER CONSTRUCTION!</h1>
             { this.state.users.map((user,i )=> (
             <div key= {i} className="card" style={{width:"18rem"}}>
                 <img src={user.imageUrl} className="card-img-top" alt="..."/>
