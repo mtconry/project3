@@ -11,7 +11,7 @@ class profile extends Component {
       }
 
       componentDidMount() {
-        Axios.get("/api/user/:id").then(res => {
+        Axios.get("/api/user/").then(res => {
             this.setState({
                 users: res.data
             });
