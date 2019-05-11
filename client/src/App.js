@@ -55,7 +55,7 @@ class App extends Component {
             <a className="navbar-brand" href="/home">Check-N-Go</a>
               {this.state.loggedIn
               ?<div style={{ display:"inline-block" }}>
-              <Link to="/">Home</Link>
+              {/* <Link to="/">Home</Link> */}
               <Link to="/Profile">Profile</Link>
               <Link to="/HotSpots">HotSpots</Link>
               <Link to="/Recent">Recent</Link>
